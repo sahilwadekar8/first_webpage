@@ -30,6 +30,7 @@
       <input id="item-input" placeholder="Write an item" required>
       <button>Add</button>
     </form>
+<button id="clear-button" type="button">Clear list</button>
 
     <ul id="item-list"></ul>
 
@@ -57,6 +58,11 @@
         input.value = "";
         showItems();
       });
+document.querySelector("#clear-button").addEventListener("click", function () {
+  items = [];
+  localStorage.removeItem("myItems");
+  showItems();
+});
 
       showItems();
     </script>
